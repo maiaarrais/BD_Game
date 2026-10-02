@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>File 05 — Final Archive</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+
+  <main>
+
+    <!-- =====================================
+         MASTER LOCK
+    ====================================== -->
+
+    <section id="gate" class="gate">
+
+      <div class="warning">
+        MASTER ARCHIVE
+      </div>
+
+      <p class="micro">
+        FILE 05 // RESTRICTED
+      </p>
+
+      <h1>
+        FINAL<br>
+        ARCHIVE
+      </h1>
+
+      <p>
+        Four evidence files generated
+        four recovery tokens.
+      </p>
+
+      <p>
+        Enter them in file order.
+      </p>
+
+      <div class="token-slots">
+        <span>?</span>
+        <span>?</span>
+        <span>?</span>
+        <span>?</span>
+      </div>
+
+      <input
+        id="gateCode"
+        type="text"
+        inputmode="numeric"
+        maxlength="7"
+        autocomplete="off"
+        placeholder="••••"
+      >
+
+      <button id="gateUnlock">
+        DECRYPT ARCHIVE
+      </button>
+
+      <p id="gateError" class="error"></p>
+
+    </section>
+
+
+
+    <!-- =====================================
+         FINAL ARCHIVE
+    ====================================== -->
+
+    <div id="archive" class="hidden">
+
+      <header>
+
+        <div class="archive-tag">
+          MASTER FILE // RECOVERED
+        </div>
+
+        <h1 class="title">
+          FINAL
+          <span>ARCHIVE</span>
+        </h1>
+
+        <p class="intro">
+          Four separate investigations have
+          converged on the same event.
+        </p>
+
+        <p class="intro">
+          One deleted file remains.
+        </p>
+
+      </header>
+
+
+
+      <!-- =====================================
+           PREVIOUS EVIDENCE
+      ====================================== -->
+
+      <section class="case-summary">
+
+        <p class="micro">
+          CASE MATERIAL // RECOVERED
+        </p>
+
+        <h2>
+          CONNECT THE FILES
+        </h2>
+
+        <div class="evidence-grid">
+
+          <article>
+            <span>01</span>
+
+            <strong>
+              RAW VOTE
+            </strong>
+
+            <p>
+              The recovered audience count
+              does not match the announced result.
+            </p>
+          </article>
+
+
+          <article>
+            <span>02</span>
+
+            <strong>
+              SPONSOR THREAD
+            </strong>
+
+            <p>
+              Val pressured Celeste over
+              the outcome of the finale.
+            </p>
+          </article>
+
+
+          <article>
+            <span>03</span>
+
+            <strong>
+              MISSING MINUTES
+            </strong>
+
+            <p>
+              Security footage reconstructed
+              the critical window.
+            </p>
+          </article>
+
+
+          <article>
+            <span>04</span>
+
+            <strong>
+              PAPER TRAIL
+            </strong>
+
+            <p>
+              The final ranking does not match
+              the verified results.
+            </p>
+          </article>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =====================================
+           DELETED FILE
+      ====================================== -->
+
+      <section class="recovery">
+
+        <div class="terminal-header">
+
+          <span>
+            DELETED FILE RECOVERY
+          </span>
+
+          <span id="recoveryStatus">
+            1 FILE FOUND
+          </span>
+
+        </div>
+
+        <h2>
+          RECOVER THE
+          <br>
+          LAST FILE
+        </h2>
+
+        <p>
+          A deleted audio fragment was recovered
+          from the production archive.
+        </p>
+
+        <button
+          id="memoFile"
+          class="deleted-file"
+        >
+
+          <span class="file-icon">
+            ◖◗
+          </span>
+
+          <span class="file-name">
+            VM_FINAL_03
+          </span>
+
+          <small>
+            DELETED AUDIO // PARTIAL RECOVERY
+          </small>
+
+        </button>
+
+      </section>
+
+
+
+      <!-- =====================================
+           VOICE MEMO
+      ====================================== -->
+
+      <section
+        id="memoPanel"
+        class="memo-panel hidden"
+      >
+
+        <div class="memo-top">
+
+          <span>
+            RECOVERED AUDIO
+          </span>
+
+          <span>
+            VM_FINAL_03
+          </span>
+
+        </div>
+
+
+        <div class="cassette">
+
+          <div class="reel"></div>
+
+          <div class="cassette-label">
+
+            CELESTE
+
+            <small>
+              PRIVATE MEMO
+            </small>
+
+          </div>
+
+          <div class="reel"></div>
+
+        </div>
+
+
+        <div class="audio-player">
+
+          <button id="playMemo">
+            ▶ PLAY
+          </button>
+
+          <div class="audio-track">
+
+            <div
+              id="audioProgress"
+              class="audio-progress"
+            ></div>
+
+          </div>
+
+          <span id="audioTime">
+            00:00
+          </span>
+
+        </div>
+
+
+        <!-- Appears after fake audio finishes -->
+
+        <div
+          id="transcript"
+          class="transcript hidden"
+        >
+
+          <p class="micro">
+            AUTOMATIC TRANSCRIPT // PARTIAL
+          </p>
+
+
+          <div class="transcript-line">
+
+            <span>
+              00:02
+            </span>
+
+            <p>
+              “Val keeps pushing.
+              Lucent wants Nova announced tonight.”
+            </p>
+
+          </div>
+
+
+          <div class="transcript-line">
+
+            <span>
+              00:06
+            </span>
+
+            <p>
+              “The real count already came through.”
+            </p>
+
+          </div>
+
+
+          <div class="transcript-line corrupted">
+
+            <span>
+              00:09
+            </span>
+
+            <p>
+              “[CORRUPTED AUDIO] ...final sheet...”
+            </p>
+
+          </div>
+
+
+          <div class="transcript-line">
+
+            <span>
+              00:13
+            </span>
+
+            <p>
+              “I couldn't destroy the original envelope.”
+            </p>
+
+          </div>
+
+
+          <div class="transcript-line corrupted">
+
+            <span>
+              00:16
+            </span>
+
+            <p>
+              “[SIGNAL LOST]”
+            </p>
+
+          </div>
+
+
+          <div class="important-line">
+            ORIGINAL ENVELOPE CONFIRMED TO EXIST
+          </div>
+
+
+          <button id="beginReconstruction">
+            RECONSTRUCT FINAL EVENT
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =====================================
+           FINAL RECONSTRUCTION PUZZLE
+      ====================================== -->
+
+      <section
+        id="reconstruction"
+        class="reconstruction hidden"
+      >
+
+        <p class="micro">
+          FINAL ANALYSIS
+        </p>
+
+        <h2>
+          WHAT CAN THE
+          <br>
+          ARCHIVE PROVE?
+        </h2>
+
+        <p class="instruction">
+          Select the statements supported by
+          the evidence you recovered.
+        </p>
+
+
+        <div class="statement-grid">
+
+
+          <button
+            class="statement correct"
+            data-id="vote"
+          >
+
+            <span>
+              A
+            </span>
+
+            <p>
+              The verified audience vote
+              and the announced winner
+              do not match.
+            </p>
+
+          </button>
+
+
+
+          <button
+            class="statement wrong"
+            data-id="bea"
+          >
+
+            <span>
+              B
+            </span>
+
+            <p>
+              Bea secretly changed
+              the audience vote totals.
+            </p>
+
+          </button>
+
+
+
+          <button
+            class="statement correct"
+            data-id="pressure"
+          >
+
+            <span>
+              C
+            </span>
+
+            <p>
+              Val pressured Celeste
+              to produce the desired outcome.
+            </p>
+
+          </button>
+
+
+
+          <button
+            class="statement wrong"
+            data-id="nova"
+          >
+
+            <span>
+              D
+            </span>
+
+            <p>
+              Nova personally altered
+              the final ranking.
+            </p>
+
+          </button>
+
+
+
+          <button
+            class="statement correct"
+            data-id="paper"
+          >
+
+            <span>
+              E
+            </span>
+
+            <p>
+              The final ranking paperwork
+              was altered after the
+              verified result existed.
+            </p>
+
+          </button>
+
+
+
+          <button
+            class="statement correct"
+            data-id="envelope"
+          >
+
+            <span>
+              F
+            </span>
+
+            <p>
+              The original result envelope
+              was not destroyed.
+            </p>
+
+          </button>
+
+        </div>
+
+
+        <div class="selection-status">
+
+          <span>
+            EVIDENCE SELECTED
+          </span>
+
+          <strong id="selectedCount">
+            0 / 4
+          </strong>
+
+        </div>
+
+
+        <button id="verifyEvidence">
+          VERIFY RECONSTRUCTION
+        </button>
+
+
+        <p
+          id="reconstructionError"
+          class="reconstruction-error"
+        ></p>
+
+      </section>
+
+
+
+      <!-- =====================================
+           ARCHIVE COMPLETE
+      ====================================== -->
+
+      <section
+        id="archiveComplete"
+        class="archive-complete hidden"
+      >
+
+        <div class="complete-bar">
+
+          <span>
+            MASTER ARCHIVE
+          </span>
+
+          <span>
+            COMPLETE
+          </span>
+
+        </div>
+
+
+        <div class="complete-symbol">
+          ✓
+        </div>
+
+
+        <h2>
+          ORIGINAL
+          <br>
+          EVIDENCE EXISTS.
+        </h2>
+
+
+        <p class="complete-copy">
+          The digital archive cannot recover
+          the contents of the original envelope.
+        </p>
+
+        <p class="complete-copy">
+          Physical verification is required
+          to close the investigation.
+        </p>
+
+
+        <div class="host-card">
+
+          <p class="micro">
+            FINAL INSTRUCTION
+          </p>
+
+          <strong>
+            REPORT TO THE HOST
+          </strong>
+
+          <p>
+            Bring the four file tokens
+            recovered during your investigation.
+          </p>
+
+
+          <div class="host-token-row">
+
+            <div>
+              <span>
+                FILE 01
+              </span>
+
+              <b>
+                ?
+              </b>
+            </div>
+
+            <div>
+              <span>
+                FILE 02
+              </span>
+
+              <b>
+                ?
+              </b>
+            </div>
+
+            <div>
+              <span>
+                FILE 03
+              </span>
+
+              <b>
+                ?
+              </b>
+            </div>
+
+            <div>
+              <span>
+                FILE 04
+              </span>
+
+              <b>
+                ?
+              </b>
+            </div>
+
+          </div>
+
+
+          <p class="host-warning">
+            ONLY THE HOST CAN RELEASE
+            THE ORIGINAL ENVELOPE.
+          </p>
+
+        </div>
+
+
+        <div class="case-status">
+
+          CASE STATUS
+
+          <strong>
+            AWAITING PHYSICAL EVIDENCE
+          </strong>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
