@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>File 02 — The Sponsor's Desk</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="noise"></div>
+
+  <main>
+
+    <!-- ========================================
+         EXTERNAL LOCK
+    ========================================= -->
+
+    <section class="gate" id="gate">
+
+      <div class="lock-icon">🔒</div>
+
+      <div class="tag">
+        ARCHIVE FILE 02 // RESTRICTED
+      </div>
+
+      <h2>
+        SPONSOR RECORDS
+      </h2>
+
+      <p>
+        Authorized sponsor ID required.
+      </p>
+
+      <input
+        id="gateCode"
+        type="text"
+        autocomplete="off"
+        autocapitalize="characters"
+        spellcheck="false"
+        placeholder="SPONSOR ID"
+      >
+
+      <button id="gateUnlock">
+        ACCESS FILE
+      </button>
+
+      <p id="gateError"></p>
+
+    </section>
+
+
+    <!-- ========================================
+         EVERYTHING AFTER LUCENT
+    ========================================= -->
+
+    <div id="gameContent" class="hidden">
+
+      <header>
+
+        <div class="tag">
+          FILE 02 // SPONSOR COMMUNICATIONS
+        </div>
+
+        <h1>
+          THE SPONSOR'S<br>
+          <em>DESK</em>
+        </h1>
+
+        <p class="brief">
+          Access to the sponsor archive is locked.
+          <br>
+          <b>Search the desk. Recover 6 letters.</b>
+        </p>
+
+
+        <div class="progress">
+
+          <span id="foundCount">
+            0
+          </span>
+
+          / 6 LETTERS RECOVERED
+
+        </div>
+
+
+        <div
+          id="letterTray"
+          class="tray"
+          aria-label="Found letters"
+        >
+
+          <span>?</span>
+          <span>?</span>
+          <span>?</span>
+          <span>?</span>
+          <span>?</span>
+          <span>?</span>
+
+        </div>
+
+      </header>
+
+
+      <!-- ========================================
+           INTERACTIVE DESK
+      ========================================= -->
+
+      <section class="desk-wrap">
+
+        <div class="desk" id="desk">
+
+          <div class="scribble">
+            WHO<br>
+            BENEFITS?
+          </div>
+
+
+          <!-- ====================================
+               LAMP — R
+          ===================================== -->
+
+          <button
+            class="object lamp clue"
+            data-letter="R"
+            data-msg="The lamp clicks on. Something appears in the light."
+            aria-label="Desk lamp"
+          >
+
+            <span class="lamp-wire"></span>
+
+            <span class="lamp-head"></span>
+
+            <span class="lamp-bulb"></span>
+
+            <span class="lamp-light">
+              <b>R</b>
+            </span>
+
+          </button>
+
+
+          <!-- ====================================
+               COFFEE — T
+          ===================================== -->
+
+          <button
+            class="object coffee clue"
+            data-letter="T"
+            data-msg="The coffee spills. Something was hiding in the cup."
+            aria-label="Coffee cup"
+          >
+
+            <span class="coffee-spill"></span>
+
+            <span class="coffee-shadow"></span>
+
+            <span class="coffee-cup">
+
+              <span class="coffee-liquid">
+
+                <b>T</b>
+
+              </span>
+
+            </span>
+
+            <span class="coffee-handle"></span>
+
+          </button>
+
+
+          <!-- ====================================
+               RECEIPT — H
+          ===================================== -->
+
+          <button
+            class="object receipt clue"
+            data-letter="H"
+            data-msg="The receipt unfolds. There is more printed at the bottom."
+            aria-label="Receipt"
+          >
+
+            <span class="receipt-title">
+              LUCENT EVENTS CO.
+            </span>
+
+            <small>
+              09/27/26&nbsp;&nbsp;20:14
+            </small>
+
+            <span class="receipt-line"></span>
+
+            <p>
+              PRINTING ........ $18.40
+              <br>
+              COFFEE ........... $6.75
+              <br>
+              EVENT SUPPLIES ... $42.10
+              <br>
+              TAX ............... $8.32
+            </p>
+
+
+            <div class="receipt-secret">
+
+              <span class="receipt-line"></span>
+
+              ARCHIVE FEE ...... $12.00
+
+              <b>H</b>
+
+              VERIFIED
+
+            </div>
+
+            <small>
+              THANK YOU
+            </small>
+
+          </button>
+
+
+          <!-- ====================================
+               PHOTO — E
+          ===================================== -->
+
+          <button
+            class="object photo clue"
+            data-letter="E"
+            data-msg="You flip the photograph over. Someone wrote on the back."
+            aria-label="Photograph"
+          >
+
+            <span class="photo-inner">
+
+              <span class="photo-front">
+
+                <span class="photo-picture">
+                  ★
+                </span>
+
+                <small>
+                  OPENING NIGHT
+                </small>
+
+              </span>
+
+
+              <span class="photo-back">
+
+                <b>E</b>
+
+                <small>
+                  don't forget.
+                </small>
+
+              </span>
+
+            </span>
+
+          </button>
+
+
+          <!-- ====================================
+               FOLDER — A
+          ===================================== -->
+
+          <button
+            class="object folder clue"
+            data-letter="A"
+            data-msg="A document slides out of the private folder."
+            aria-label="Private folder"
+          >
+
+            <span class="folder-tab">
+              PRIVATE
+            </span>
+
+            <span class="folder-paper">
+
+              <small>
+                INTERNAL DOCUMENT
+              </small>
+
+              <b>A</b>
+
+              <small>
+                DO NOT COPY
+              </small>
+
+            </span>
+
+          </button>
+
+
+          <!-- ====================================
+               STAPLER — D
+          ===================================== -->
+
+          <button
+            class="object stapler clue"
+            data-letter="D"
+            data-msg="CLACK! A tiny slip appears underneath the stapler."
+            aria-label="Stapler"
+          >
+
+            <span class="stapler-paper">
+              <b>D</b>
+            </span>
+
+            <span class="stapler-top"></span>
+
+            <span class="stapler-middle"></span>
+
+            <span class="stapler-bottom"></span>
+
+          </button>
+
+
+          <!-- ====================================
+               PHONE — HINT
+          ===================================== -->
+
+          <button
+            class="object phone"
+            id="deskPhone"
+            aria-label="Phone"
+          >
+
+            <span class="phone-speaker"></span>
+
+            <span class="phone-screen">
+
+              <span id="phoneText">
+                1 NEW
+                <br>
+                VOICEMAIL
+              </span>
+
+            </span>
+
+            <span class="phone-button"></span>
+
+          </button>
+
+
+          <!-- ====================================
+               RED HERRINGS
+          ===================================== -->
+
+          <button
+            class="object envelope dud"
+            data-msg="EMPTY. Whoever was here already took whatever was inside."
+            aria-label="Envelope"
+          >
+
+            <span>
+              CONFIDENTIAL
+            </span>
+
+          </button>
+
+
+          <button
+            class="object keys dud"
+            data-msg="Just keys. None of them fit anything here."
+            aria-label="Keys"
+          >
+            ⚿
+          </button>
+
+
+          <button
+            class="object glasses dud"
+            data-msg="Nothing suspicious. Just glasses."
+            aria-label="Glasses"
+          >
+
+            <span></span>
+            <span></span>
+
+          </button>
+
+
+          <button
+            class="object pen dud"
+            data-msg="The pen rolls away. Nothing was underneath it."
+            aria-label="Pen"
+          ></button>
+
+
+          <button
+            class="object sticky dud"
+            data-msg="BUY OAT MILK. Not every note is evidence."
+            aria-label="Sticky note"
+          >
+
+            BUY
+            <br>
+            OAT
+            <br>
+            MILK
+
+          </button>
+
+
+          <button
+            class="object disk dud"
+            data-msg="A floppy disk labelled VACATION PHOTOS. Suspicious, but useless."
+            aria-label="Floppy disk"
+          >
+
+            <span>
+              3½
+            </span>
+
+            <small>
+              VACATION
+              <br>
+              PHOTOS
+            </small>
+
+          </button>
+
+
+          <!-- MESSAGE -->
+
+          <div
+            id="toast"
+            class="toast"
+            aria-live="polite"
+          >
+            Tap objects to investigate.
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           INTERNAL PASSWORD
+      ========================================= -->
+
+      <section
+        class="lockbox"
+        id="lockbox"
+      >
+
+        <p class="micro">
+          ARCHIVE SECURITY // 6 CHARACTER KEY
+        </p>
+
+        <h2>
+          REARRANGE THE LETTERS
+        </h2>
+
+        <p>
+          Recover all six letters from the desk,
+          then determine the archive key.
+        </p>
+
+
+        <div class="password">
+
+          <input
+            id="password"
+            type="text"
+            maxlength="12"
+            autocomplete="off"
+            autocapitalize="characters"
+            spellcheck="false"
+            placeholder="_ _ _ _ _ _"
+          >
+
+          <button id="access">
+            ACCESS ARCHIVE
+          </button>
+
+        </div>
+
+        <p
+          id="error"
+          aria-live="polite"
+        ></p>
+
+      </section>
+
+
+      <!-- ========================================
+           RECOVERED MESSAGES
+      ========================================= -->
+
+      <section
+        class="archive hidden"
+        id="archive"
+      >
+
+        <div class="terminal">
+
+          <p class="green">
+            ACCESS GRANTED // RECOVERED THREAD
+          </p>
+
+
+          <div class="message val">
+
+            <b>VAL</b>
+
+            <p>
+              Nova needs to win tonight.
+            </p>
+
+          </div>
+
+
+          <div class="message celeste">
+
+            <b>CELESTE</b>
+
+            <p>
+              The audience vote isn't something
+              I control.
+            </p>
+
+          </div>
+
+
+          <div class="message val">
+
+            <b>VAL</b>
+
+            <p>
+              Lucent's funding depends on
+              the right outcome.
+            </p>
+
+          </div>
+
+
+          <div class="message celeste">
+
+            <b>CELESTE</b>
+
+            <p>
+              ...I'll take care of
+              the final result.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ====================================
+             EVIDENCE
+        ===================================== -->
+
+        <article class="evidence">
+
+          <p class="micro">
+            EVIDENCE FILE 02
+          </p>
+
+          <h2>
+            SPONSOR
+            <br>
+            COMMUNICATIONS
+          </h2>
+
+          <p>
+            Val pressured Celeste to ensure
+            Nova won.
+          </p>
+
+          <p>
+            Celeste agreed to handle
+            the final result.
+          </p>
+
+          <div class="stamp">
+            RECOVERED
+          </div>
+
+
+          <div class="token">
+
+            FILE TOKEN
+
+            <strong>
+              2
+            </strong>
+
+          </div>
+
+          <p class="micro">
+            KEEP THIS NUMBER.
+          </p>
+
+        </article>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

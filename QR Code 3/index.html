@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>File 03 — Missing Minutes</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+
+<body>
+
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+
+  <main>
+
+    <!-- =========================================
+         EXTERNAL LOCK
+    ========================================== -->
+
+    <section
+      class="gate"
+      id="gate"
+    >
+
+      <div class="camera-icon">
+        ◉
+      </div>
+
+      <div class="tag">
+        ARCHIVE FILE 03 // RESTRICTED
+      </div>
+
+      <h1 class="gate-title">
+        SECURITY<br>
+        ARCHIVE
+      </h1>
+
+      <p class="gate-copy">
+        A section of the event surveillance archive
+        has been isolated.
+      </p>
+
+      <p class="gate-copy">
+        Enter the missing archive timestamp
+        to recover the footage.
+      </p>
+
+      <input
+        id="gateCode"
+        type="text"
+        inputmode="numeric"
+        autocomplete="off"
+        maxlength="5"
+        placeholder="--:--"
+      >
+
+      <button id="gateUnlock">
+        RECOVER ARCHIVE
+      </button>
+
+      <p
+        id="gateError"
+        class="error"
+        aria-live="polite"
+      ></p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         GAME
+    ========================================== -->
+
+    <div
+      id="gameContent"
+      class="hidden"
+    >
+
+      <!-- HEADER -->
+
+      <header>
+
+        <div class="tag">
+          FILE 03 // SURVEILLANCE RECOVERY
+        </div>
+
+        <h1 class="main-title">
+          MISSING
+          <span>MINUTES</span>
+        </h1>
+
+        <p class="brief">
+          Four fragments survived the archive corruption.
+          <br>
+          <strong>
+            Inspect them. Reconstruct the sequence.
+          </strong>
+        </p>
+
+      </header>
+
+
+
+      <!-- =========================================
+           CCTV MONITOR
+      ========================================== -->
+
+      <section class="monitor">
+
+        <div class="monitor-top">
+
+          <span>
+            LUCENT EVENT SECURITY
+          </span>
+
+          <span class="rec">
+            ● REC
+          </span>
+
+        </div>
+
+
+        <div class="screen">
+
+          <div class="screen-static"></div>
+
+
+          <div class="camera-label">
+            CAM
+            <span id="viewerCamera">
+              --
+            </span>
+          </div>
+
+
+          <div
+            class="viewer-time"
+            id="viewerTime"
+          >
+            --:--
+          </div>
+
+
+          <div
+            class="viewer-scene"
+            id="viewerScene"
+          >
+
+            <div class="empty-feed">
+
+              <div class="camera-symbol">
+                ◉
+              </div>
+
+              SELECT A FOOTAGE FRAGMENT
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="viewer-caption"
+            id="viewerCaption"
+          >
+            NO SIGNAL SELECTED
+          </div>
+
+        </div>
+
+
+        <div class="monitor-controls">
+
+          <span>
+            ARCHIVE STATUS:
+          </span>
+
+          <strong id="archiveStatus">
+            4 FRAGMENTS RECOVERED
+          </strong>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================================
+           FOOTAGE FRAGMENTS
+      ========================================== -->
+
+      <section class="fragment-section">
+
+        <div class="section-heading">
+
+          <div>
+            <p class="micro">
+              RECOVERED DATA
+            </p>
+
+            <h2>
+              FOOTAGE FRAGMENTS
+            </h2>
+          </div>
+
+          <p>
+            Tap each fragment to inspect it.
+          </p>
+
+        </div>
+
+
+        <div
+          class="fragment-grid"
+          id="fragmentGrid"
+        >
+
+          <!-- 20:43 -->
+
+          <button
+            class="fragment"
+            data-id="clip43"
+            data-order="3"
+            data-camera="04"
+            data-time="20:43"
+          >
+
+            <span class="fragment-number">
+              FRAGMENT A
+            </span>
+
+            <span class="mini-feed feed-prize">
+
+              <span class="mini-table"></span>
+
+              <span class="mini-person one"></span>
+
+              <span class="mini-person two"></span>
+
+              <span class="mini-envelope"></span>
+
+            </span>
+
+            <span class="fragment-data">
+              CAM 04
+              <br>
+              TIME RECOVERED
+            </span>
+
+          </button>
+
+
+
+          <!-- 20:41 -->
+
+          <button
+            class="fragment"
+            data-id="clip41"
+            data-order="1"
+            data-camera="02"
+            data-time="20:41"
+          >
+
+            <span class="fragment-number">
+              FRAGMENT B
+            </span>
+
+            <span class="mini-feed feed-live">
+
+              <span class="mini-phone"></span>
+
+              <span class="mini-live-dot"></span>
+
+              <span class="mini-person center"></span>
+
+            </span>
+
+            <span class="fragment-data">
+              CAM 02
+              <br>
+              TIME RECOVERED
+            </span>
+
+          </button>
+
+
+
+          <!-- 20:44 -->
+
+          <button
+            class="fragment"
+            data-id="clip44"
+            data-order="4"
+            data-camera="01"
+            data-time="20:44"
+          >
+
+            <span class="fragment-number">
+              FRAGMENT C
+            </span>
+
+            <span class="mini-feed feed-return">
+
+              <span class="mini-door"></span>
+
+              <span class="mini-person returning"></span>
+
+            </span>
+
+            <span class="fragment-data">
+              CAM 01
+              <br>
+              TIME RECOVERED
+            </span>
+
+          </button>
+
+
+
+          <!-- 20:42 -->
+
+          <button
+            class="fragment"
+            data-id="clip42"
+            data-order="2"
+            data-camera="04"
+            data-time="20:42"
+          >
+
+            <span class="fragment-number">
+              FRAGMENT D
+            </span>
+
+            <span class="mini-feed feed-turn">
+
+              <span class="mini-camera"></span>
+
+              <span class="mini-arrow">
+                ↷
+              </span>
+
+              <span class="mini-table"></span>
+
+            </span>
+
+            <span class="fragment-data">
+              CAM 04
+              <br>
+              TIME RECOVERED
+            </span>
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================================
+           TIMELINE PUZZLE
+      ========================================== -->
+
+      <section
+        class="timeline-panel"
+        id="timelinePanel"
+      >
+
+        <p class="micro">
+          RECONSTRUCTION TERMINAL
+        </p>
+
+        <h2>
+          RESTORE THE TIMELINE
+        </h2>
+
+        <p class="timeline-instruction">
+          Put the four footage fragments in chronological
+          order, earliest to latest.
+        </p>
+
+
+        <div
+          class="timeline"
+          id="timeline"
+        >
+
+          <!-- Filled by JavaScript -->
+
+        </div>
+
+
+        <div class="move-controls">
+
+          <button
+            id="moveLeft"
+            class="small-button"
+          >
+            ← EARLIER
+          </button>
+
+          <button
+            id="moveRight"
+            class="small-button"
+          >
+            LATER →
+          </button>
+
+        </div>
+
+
+        <button
+          id="verifyTimeline"
+          class="verify"
+        >
+          VERIFY RECONSTRUCTION
+        </button>
+
+
+        <p
+          id="timelineError"
+          class="timeline-error"
+          aria-live="polite"
+        ></p>
+
+      </section>
+
+
+
+      <!-- =========================================
+           RECONSTRUCTION RESULT
+      ========================================== -->
+
+      <section
+        id="reconstruction"
+        class="reconstruction hidden"
+      >
+
+        <div class="reconstruction-header">
+
+          <span>
+            ARCHIVE RESTORED
+          </span>
+
+          <span>
+            100%
+          </span>
+
+        </div>
+
+
+        <h2>
+          TIMELINE
+          <br>
+          RECOVERED
+        </h2>
+
+
+        <div class="final-timeline">
+
+
+          <!-- 20:41 -->
+
+          <article>
+
+            <div class="time">
+              20:41
+            </div>
+
+            <div class="event">
+
+              <strong>
+                CAM 02
+              </strong>
+
+              <p>
+                Cleo's livestream begins.
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 20:42 -->
+
+          <article>
+
+            <div class="time">
+              20:42
+            </div>
+
+            <div class="event">
+
+              <strong>
+                CAM 04
+              </strong>
+
+              <p>
+                Camera 04 turns toward
+                the Prize Table.
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 20:43 -->
+
+          <article class="critical">
+
+            <div class="time">
+              20:43
+            </div>
+
+            <div class="event">
+
+              <strong>
+                CAM 04 // CRITICAL WINDOW
+              </strong>
+
+              <p>
+                Bea and Rex are visible together
+                near the Prize Table.
+              </p>
+
+              <p>
+                The envelope disappears during
+                this window.
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 20:44 -->
+
+          <article>
+
+            <div class="time">
+              20:44
+            </div>
+
+            <div class="event">
+
+              <strong>
+                CAM 01
+              </strong>
+
+              <p>
+                Celeste returns.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+
+        <!-- =====================================
+             EVIDENCE
+        ====================================== -->
+
+        <article class="evidence">
+
+          <p class="micro">
+            EVIDENCE FILE 03
+          </p>
+
+          <h2>
+            THE MISSING
+            <br>
+            MINUTE
+          </h2>
+
+
+          <div class="evidence-photo">
+
+            <div class="evidence-rec">
+              ● REC
+            </div>
+
+            <div class="evidence-time">
+              20:43
+            </div>
+
+            <div class="evidence-table"></div>
+
+            <div class="evidence-person person-a">
+              <span></span>
+              <small>
+                BEA
+              </small>
+            </div>
+
+            <div class="evidence-person person-b">
+              <span></span>
+              <small>
+                REX
+              </small>
+            </div>
+
+            <div class="missing-envelope">
+              ?
+            </div>
+
+          </div>
+
+
+          <p>
+            The reconstructed footage places
+            <strong>Bea and Rex together near the Prize Table</strong>
+            during the critical 20:43 window.
+          </p>
+
+          <p>
+            <strong>Nova is elsewhere recording with Avery.</strong>
+            Celeste does not return until 20:44.
+          </p>
+
+
+          <div class="stamp">
+            TIMELINE VERIFIED
+          </div>
+
+
+          <div class="token">
+
+            FILE TOKEN
+
+            <strong>
+              4
+            </strong>
+
+          </div>
+
+
+          <p class="micro">
+            KEEP THIS NUMBER.
+          </p>
+
+        </article>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

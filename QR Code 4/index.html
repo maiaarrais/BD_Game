@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>File 04 — The Paper Trail</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="noise"></div>
+
+  <main>
+
+    <!-- ================================
+         EXTERNAL LOCK
+    ================================= -->
+
+    <section id="gate" class="gate">
+
+      <div class="file-tab">
+        CONFIDENTIAL
+      </div>
+
+      <p class="micro">
+        PRODUCTION ARCHIVE // FILE 04
+      </p>
+
+      <h1>
+        PAPER<br>
+        TRAIL
+      </h1>
+
+      <p>
+        Restricted production paperwork recovered
+        from the finale archive.
+      </p>
+
+      <div class="classified">
+        AUTHORIZATION REQUIRED
+      </div>
+
+      <input
+        id="gateCode"
+        type="text"
+        autocomplete="off"
+        placeholder="ENTER FILE PASSWORD"
+      >
+
+      <button id="gateUnlock">
+        OPEN CASE FILE
+      </button>
+
+      <p id="gateError" class="error"></p>
+
+    </section>
+
+
+    <!-- ================================
+         GAME
+    ================================= -->
+
+    <div id="gameContent" class="hidden">
+
+      <header>
+
+        <div class="case-number">
+          CASE 04 / DOCUMENT ANALYSIS
+        </div>
+
+        <h1 class="title">
+          THE
+          <span>PAPER TRAIL</span>
+        </h1>
+
+        <div class="instruction-card">
+
+          <strong>
+            THREE THINGS DON'T MATCH.
+          </strong>
+
+          <p>
+            Compare the recovered production documents.
+            Mark the three discrepancies that prove
+            something changed between the original
+            results and the finale paperwork.
+          </p>
+
+        </div>
+
+      </header>
+
+
+      <!-- PROGRESS -->
+
+      <section class="progress-strip">
+
+        <span>
+          DISCREPANCIES FOUND
+        </span>
+
+        <strong id="foundCount">
+          0 / 3
+        </strong>
+
+      </section>
+
+
+      <!-- ================================
+           DOCUMENT BOARD
+      ================================= -->
+
+      <section class="evidence-board">
+
+        <div class="tape tape-one"></div>
+        <div class="tape tape-two"></div>
+
+
+        <!-- ORIGINAL RESULTS -->
+
+        <article class="document results-sheet">
+
+          <div class="paper-label">
+            DOCUMENT A
+          </div>
+
+          <p class="doc-code">
+            RAW RESULTS // VERIFIED
+          </p>
+
+          <h2>
+            AUDIENCE VOTE
+          </h2>
+
+          <p class="date">
+            FINALE NIGHT
+          </p>
+
+          <div class="rule"></div>
+
+          <div class="ranking">
+
+            <div class="rank-row">
+              <span>
+                01
+              </span>
+
+              <strong>
+                MAX METRICS
+              </strong>
+
+              <b>
+                88
+              </b>
+            </div>
+
+            <div class="rank-row">
+              <span>
+                02
+              </span>
+
+              <strong>
+                NOVA LUX
+              </strong>
+
+              <b>
+                79
+              </b>
+            </div>
+
+          </div>
+
+          <div class="verified-stamp">
+            VERIFIED
+          </div>
+
+          <!-- CORRECT DISCREPANCY 1 -->
+
+          <button
+            class="markable clue"
+            data-clue="winner"
+            aria-label="Mark Max Metrics ranking"
+          >
+            +
+          </button>
+
+        </article>
+
+
+        <!-- FINAL RANKING -->
+
+        <article class="document final-sheet">
+
+          <div class="paper-label red">
+            DOCUMENT B
+          </div>
+
+          <p class="doc-code">
+            FINAL BROADCAST COPY
+          </p>
+
+          <h2>
+            FINAL RANKING
+          </h2>
+
+          <p class="small-type">
+            APPROVED FOR STAGE ANNOUNCEMENT
+          </p>
+
+          <div class="rule"></div>
+
+          <div class="ranking">
+
+            <div class="rank-row altered">
+              <span>
+                01
+              </span>
+
+              <strong>
+                NOVA LUX
+              </strong>
+
+              <b>
+                WINNER
+              </b>
+            </div>
+
+            <div class="rank-row">
+              <span>
+                02
+              </span>
+
+              <strong>
+                MAX METRICS
+              </strong>
+
+              <b>
+                —
+              </b>
+            </div>
+
+          </div>
+
+          <p class="handwriting">
+            USE THIS VERSION
+          </p>
+
+          <!-- CORRECT DISCREPANCY 2 -->
+
+          <button
+            class="markable clue"
+            data-clue="ranking"
+            aria-label="Mark altered final ranking"
+          >
+            +
+          </button>
+
+        </article>
+
+
+        <!-- SCHEDULE -->
+
+        <article class="document schedule">
+
+          <div class="paper-label yellow">
+            DOCUMENT C
+          </div>
+
+          <p class="doc-code">
+            FINALE RUN OF SHOW
+          </p>
+
+          <h2>
+            TONIGHT
+          </h2>
+
+          <div class="schedule-row">
+            <b>20:30</b>
+            <span>Finalists backstage</span>
+          </div>
+
+          <div class="schedule-row">
+            <b>20:40</b>
+            <span>Audience vote closes</span>
+          </div>
+
+          <div class="schedule-row important-row">
+            <b>20:45</b>
+            <span>Verified winner delivered</span>
+          </div>
+
+          <div class="schedule-row">
+            <b>20:50</b>
+            <span>Winner announcement</span>
+          </div>
+
+          <div class="schedule-row">
+            <b>21:00</b>
+            <span>Press photographs</span>
+          </div>
+
+          <!-- CORRECT DISCREPANCY 3 -->
+
+          <button
+            class="markable clue"
+            data-clue="timing"
+            aria-label="Mark verified winner timing"
+          >
+            +
+          </button>
+
+        </article>
+
+
+        <!-- RED HERRING: SPONSOR MEMO -->
+
+        <article class="document sponsor-note">
+
+          <div class="paper-label cyan">
+            DOCUMENT D
+          </div>
+
+          <p class="doc-code">
+            SPONSOR SERVICES
+          </p>
+
+          <h2>
+            LUCENT
+          </h2>
+
+          <p>
+            Confirm logo placement on stage screens.
+          </p>
+
+          <p>
+            Sponsor wall installed before doors open.
+          </p>
+
+          <p>
+            Hospitality passes:
+            <strong>12</strong>
+          </p>
+
+          <button
+            class="markable decoy"
+            data-decoy="sponsor"
+            aria-label="Inspect sponsor note"
+          >
+            +
+          </button>
+
+        </article>
+
+
+        <!-- RED HERRING: FOOD RECEIPT -->
+
+        <article class="document receipt">
+
+          <p class="receipt-title">
+            STUDIO CATERING
+          </p>
+
+          <p>
+            6 × COFFEE
+            <span>$18.00</span>
+          </p>
+
+          <p>
+            2 × TEA
+            <span>$5.00</span>
+          </p>
+
+          <p>
+            1 × CAKE
+            <span>$24.00</span>
+          </p>
+
+          <p>
+            3 × SANDWICH
+            <span>$27.00</span>
+          </p>
+
+          <div class="receipt-total">
+            TOTAL $74.00
+          </div>
+
+          <button
+            class="markable decoy"
+            data-decoy="receipt"
+            aria-label="Inspect receipt"
+          >
+            +
+          </button>
+
+        </article>
+
+
+        <!-- RED HERRING: CALL SHEET -->
+
+        <article class="document call-sheet">
+
+          <div class="paper-label">
+            DOCUMENT E
+          </div>
+
+          <h2>
+            CALL SHEET
+          </h2>
+
+          <p>
+            STAGE CREW — 17:00
+          </p>
+
+          <p>
+            CAMERA — 18:00
+          </p>
+
+          <p>
+            FINALISTS — 19:15
+          </p>
+
+          <p>
+            DOORS — 19:30
+          </p>
+
+          <button
+            class="markable decoy"
+            data-decoy="call"
+            aria-label="Inspect call sheet"
+          >
+            +
+          </button>
+
+        </article>
+
+      </section>
+
+
+      <!-- FEEDBACK -->
+
+      <div id="toast" class="toast">
+        SELECT SOMETHING THAT DOESN'T MATCH.
+      </div>
+
+
+      <!-- ================================
+           ANALYSIS PANEL
+      ================================= -->
+
+      <section id="analysisPanel" class="analysis-panel hidden">
+
+        <p class="micro">
+          THREE DISCREPANCIES IDENTIFIED
+        </p>
+
+        <h2>
+          COMPARE THE RECORDS
+        </h2>
+
+        <div class="comparison">
+
+          <div class="comparison-original">
+
+            <span>
+              RAW RESULT
+            </span>
+
+            <strong>
+              MAX
+            </strong>
+
+            <b>
+              88
+            </b>
+
+          </div>
+
+          <div class="arrow">
+            →
+          </div>
+
+          <div class="comparison-final">
+
+            <span>
+              BROADCAST RESULT
+            </span>
+
+            <strong>
+              NOVA
+            </strong>
+
+            <b>
+              WINNER
+            </b>
+
+          </div>
+
+        </div>
+
+
+        <p class="analysis-copy">
+          The raw vote was already verified before
+          the winner was scheduled to be delivered
+          for the stage announcement.
+        </p>
+
+        <p class="analysis-copy">
+          Yet the final broadcast copy reverses
+          the ranking.
+        </p>
+
+
+        <button id="overlayButton">
+          OVERLAY DOCUMENTS
+        </button>
+
+      </section>
+
+
+      <!-- ================================
+           OVERLAY
+      ================================= -->
+
+      <section id="overlayScene" class="overlay-scene hidden">
+
+        <div class="overlay-window">
+
+          <p class="micro">
+            DOCUMENT COMPARISON
+          </p>
+
+          <h2>
+            ORIGINAL / FINAL
+          </h2>
+
+          <div class="overlay-paper">
+
+            <div class="ghost original-ghost">
+              <span>01</span>
+              MAX METRICS
+              <strong>88</strong>
+            </div>
+
+            <div class="ghost final-ghost">
+              <span>01</span>
+              NOVA LUX
+              <strong>WINNER</strong>
+            </div>
+
+            <div class="red-circle"></div>
+
+            <div class="changed">
+              RANKING CHANGED
+            </div>
+
+          </div>
+
+          <button id="confirmEvidence">
+            LOG EVIDENCE
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================================
+           FINAL EVIDENCE
+      ================================= -->
+
+      <section id="evidence" class="evidence hidden">
+
+        <div class="evidence-header">
+          EVIDENCE FILE 04
+        </div>
+
+        <h2>
+          ALTERED
+          <br>
+          RANKING
+        </h2>
+
+        <div class="evidence-summary">
+
+          <div class="big-number">
+            88
+          </div>
+
+          <div class="versus">
+            ≠
+          </div>
+
+          <div class="winner-name">
+            NOVA
+            <span>
+              ANNOUNCED WINNER
+            </span>
+          </div>
+
+        </div>
+
+        <p>
+          The production paperwork does not match
+          the verified audience vote.
+        </p>
+
+        <p>
+          <strong>
+            Max Metrics had the higher verified result,
+            but the final broadcast ranking lists
+            Nova Lux as the winner.
+          </strong>
+        </p>
+
+        <div class="evidence-stamp">
+          DOCUMENT ALTERATION CONFIRMED
+        </div>
+
+
+        <div class="token">
+
+          <span>
+            FILE TOKEN
+          </span>
+
+          <strong>
+            1
+          </strong>
+
+        </div>
+
+        <p class="keep">
+          KEEP THIS NUMBER.
+        </p>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

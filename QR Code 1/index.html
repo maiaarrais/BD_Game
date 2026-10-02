@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signal Lost — Archive 01</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grain"></div>
+
+  <main class="poster">
+    <section class="gate" id="gate">
+      <div class="lock-icon">🔒</div>
+      <p class="eyebrow">ARCHIVE FILE 01 // RESTRICTED</p>
+      <h2>TERMINAL LOCKED</h2>
+      <p>Terminal version required.</p>
+      <input id="gateCode" autocomplete="off" spellcheck="false" placeholder="ENTER VERSION">
+      <button id="gateUnlock">UNLOCK FILE</button>
+      <p id="gateError"></p>
+    </section>
+    <div id="gameContent" class="hidden">
+    <header>
+      <p class="eyebrow">ARCHIVE FILE 01 // RESTRICTED</p>
+      <h1>SIGNAL<br><span>LOST</span></h1>
+      <p class="intro">The voting terminal suffered data corruption.<br><b>Recover the final count.</b></p>
+    </header>
+
+    <section class="machine">
+      <div class="antenna antenna-left"></div>
+      <div class="antenna antenna-right"></div>
+
+      <div class="tv">
+        <div class="screen-wrap">
+          <div class="screen" id="screen">
+            <div class="scanlines"></div>
+            <div id="channelView">
+              <p class="terminal-label">VOTING TERMINAL V17</p>
+              <p class="channel-title">CHANNEL A</p>
+              <div class="signal">M _ X&nbsp;&nbsp;&nbsp;8 _</div>
+              <p class="status">SIGNAL CORRUPTED</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <p>CHANNEL</p>
+          <div class="channel-buttons">
+            <button class="channel active" data-channel="A">A</button>
+            <button class="channel" data-channel="B">B</button>
+            <button class="channel" data-channel="C">C</button>
+            <button class="channel" data-channel="D">D</button>
+          </div>
+          <div class="dial"></div>
+          <div class="speaker">
+            <i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+        </div>
+      </div>
+
+      <aside class="note">
+        <span>!</span>
+        THE SIGNAL LIES.<br>
+        <u>THE OVERLAP DOESN'T.</u>
+      </aside>
+    </section>
+
+    <section class="decoder" id="decoder">
+      <h2>RECONSTRUCT THE COUNT</h2>
+      <div class="candidate">
+        <label>MAX</label>
+        <input inputmode="numeric" maxlength="2" id="maxInput" placeholder="??" autocomplete="off">
+      </div>
+      <div class="candidate">
+        <label>NOVA</label>
+        <input inputmode="numeric" maxlength="2" id="novaInput" placeholder="??" autocomplete="off">
+      </div>
+      <button id="restore">RESTORE DATA</button>
+      <p id="error" aria-live="polite"></p>
+    </section>
+
+    <section class="evidence hidden" id="evidence">
+      <div class="receipt">
+        <p class="tiny">VOTING TERMINAL V17</p>
+        <h2>ARCHIVE RESTORED</h2>
+        <p>VOTING CLOSED: 20:30</p>
+        <hr>
+        <p class="count">MAX METRICS <b>88</b></p>
+        <p class="count">NOVA LUX <b>79</b></p>
+        <hr>
+        <div class="stamp">MAX WON<br>THE VOTE</div>
+        <p class="file">EVIDENCE FILE 01<br>RAW VOTING ARCHIVE</p>
+        <div class="token">ARCHIVE TOKEN <strong>8</strong></div>
+        <p class="keep">KEEP THIS NUMBER.</p>
+      </div>
+    </section>
+
+    <footer>PROPERTY OF THE ARCHIVE // DO NOT DESTROY</footer>
+  </div>
+</main>
+
+  <script src="script.js"></script>
+</body>
+</html>
